@@ -4,11 +4,22 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "uv run python app.py",
+    "dev:webapp": "pnpm --filter webapp dev",
+    "dev:api": "pnpm --filter api dev",
+    "dev:servers": "./scripts/dev-servers.sh",
+    "dev:servers:stop": "./scripts/stop-dev-servers.sh",
+    "check-setup": "./scripts/check-prerequisites.sh",
+    "setup": "./scripts/setup.sh",
+    "reset": "./scripts/reset.sh",
+    "test:hooks": "./scripts/test-git-hooks.sh",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types"
+    "check-types": "turbo run check-types",
+    "prepare": "husky"
   },
   "devDependencies": {
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
     "prettier": "^3.6.2",
     "turbo": "^2.5.8",
     "typescript": "5.9.2"
@@ -16,5 +27,19 @@
   "packageManager": "pnpm@9.0.0",
   "engines": {
     "node": ">=18"
+  },
+  "lint-staged": {
+    "apps/**/*.{js,jsx,ts,tsx}": [
+      "prettier --write"
+    ],
+    "packages/**/*.{js,jsx,ts,tsx}": [
+      "prettier --write"
+    ],
+    "services/**/*.{js,ts}": [
+      "prettier --write"
+    ],
+    "*.{json,md,yml,yaml}": [
+      "prettier --write"
+    ]
   }
 }

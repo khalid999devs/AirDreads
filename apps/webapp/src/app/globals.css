@@ -1,0 +1,240 @@
+@import 'tailwindcss';
+
+/**
+ * AirDreads Theme Configuration
+ * 
+ * Color System:
+ * - Base Colors: Core brand colors inspired by fire/air/space theme
+ * - Semantic Colors: Purpose-driven colors for UI states
+ * - Surface Colors: Background and container colors
+ * - Border Colors: Dividers and input styling
+ */
+
+@theme {
+  /* ===== BASE BRAND COLORS ===== */
+  /* Primary: Fire Orange - Main brand color */
+  --color-primary: #ffa665;
+  --color-primary-foreground: #150800;
+
+  /* Secondary: Golden Yellow - Complementary accent */
+  --color-secondary: #ffd77b;
+  --color-secondary-foreground: #150800;
+
+  /* ===== SEMANTIC STATE COLORS ===== */
+  /* Success: Life Green - Clean air, positive actions */
+  --color-success: #8cff6f;
+  --color-success-foreground: #150800;
+
+  /* Destructive: Alert Red - Danger, pollution warnings */
+  --color-destructive: #ff6f6f;
+  --color-destructive-foreground: #150800;
+
+  /* ===== BACKGROUND & SURFACE COLORS ===== */
+  /* Background: Deep Space Black - Main app background */
+  --color-background: #150800;
+  --color-foreground: #ffffff;
+
+  /* Surface: Elevated Dark - Cards, modals, elevated content */
+  --color-surface: #1f0e03;
+
+  /* Card: Same as surface for consistency */
+  --color-card: #1f0e03;
+  --color-card-foreground: #ffffff;
+
+  /* Muted: Subdued content areas */
+  --color-muted: #1f0e03;
+  --color-muted-foreground: #999999;
+
+  /* ===== INTERACTIVE ELEMENT COLORS ===== */
+  /* Border: Subtle separators */
+  --color-border: #333333;
+
+  /* Input: Form field styling */
+  --color-input: #333333;
+
+  /* Ring: Focus indicators */
+  --color-ring: #ffa665;
+
+  /* ===== ALTERNATIVE NAMING (for compatibility) ===== */
+  /* These provide alternative access patterns */
+  --color-on-primary: #150800;
+  --color-on-secondary: #150800;
+  --color-on-success: #150800;
+  --color-on-error: #150800;
+  --color-on-surface: #ffffff;
+}
+
+/**
+ * Light Theme Override
+ * Applied when [data-theme="light"] is set on the document element
+ */
+[data-theme='light'] {
+  /* ===== BASE BRAND COLORS ===== */
+  /* Primary: Fire Orange - Slightly darker for better contrast on light */
+  --color-primary: #e6935a;
+  --color-primary-foreground: #ffffff;
+
+  /* Secondary: Golden Yellow - Darker for readability */
+  --color-secondary: #d4b857;
+  --color-secondary-foreground: #ffffff;
+
+  /* ===== SEMANTIC STATE COLORS ===== */
+  /* Success: Life Green - Darker shade for light theme */
+  --color-success: #4ade80;
+  --color-success-foreground: #ffffff;
+
+  /* Destructive: Alert Red - Maintains visibility */
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #ffffff;
+
+  /* ===== BACKGROUND & SURFACE COLORS ===== */
+  /* Background: Clean White - Main app background */
+  --color-background: #ffffff;
+  --color-foreground: #0a0a0a;
+
+  /* Surface: Light Gray - Cards, modals, elevated content */
+  --color-surface: #f8fafc;
+
+  /* Card: Slightly elevated surface with subtle border */
+  --color-card: #ffffff;
+  --color-card-foreground: #0a0a0a;
+
+  /* Muted: Light gray content areas */
+  --color-muted: #f1f5f9;
+  --color-muted-foreground: #64748b;
+
+  /* ===== INTERACTIVE ELEMENT COLORS ===== */
+  /* Border: Subtle light separators */
+  --color-border: #e5e7eb;
+
+  /* Input: Form field styling */
+  --color-input: #e5e7eb;
+
+  /* Ring: Focus indicators */
+  --color-ring: #e6935a;
+
+  /* ===== ALTERNATIVE NAMING (for compatibility) ===== */
+  --color-on-primary: #ffffff;
+  --color-on-secondary: #ffffff;
+  --color-on-success: #ffffff;
+  --color-on-error: #ffffff;
+  --color-on-surface: #0a0a0a;
+}
+
+/**
+ * Global CSS Custom Properties
+ * These complement the @theme block above and provide intellisense-friendly access
+ */
+:root {
+  /* ===== SPACING & SIZING ===== */
+  --radius: 10px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+
+  /* ===== INTELLISENSE-FRIENDLY COLOR VARIABLES ===== */
+  /* These mirror the @theme colors with simpler names for better autocomplete */
+
+  /* Base surfaces and text */
+  --background: var(--color-background);
+  --foreground: var(--color-foreground);
+  --surface: var(--color-surface);
+  --on-surface: var(--color-foreground);
+
+  /* Brand colors */
+  --primary: var(--color-primary);
+  --on-primary: var(--color-primary-foreground);
+  --secondary: var(--color-secondary);
+  --on-secondary: var(--color-secondary-foreground);
+
+  /* Status colors */
+  --success: var(--color-success);
+  --on-success: var(--color-success-foreground);
+  --destructive: var(--color-destructive);
+  --on-destructive: var(--color-destructive-foreground);
+  --error: var(--color-destructive);
+  --on-error: var(--color-destructive-foreground);
+
+  /* Interactive elements */
+  --border: var(--color-border);
+  --input: var(--color-input);
+  --ring: var(--color-ring);
+  --muted: var(--color-muted);
+  --muted-foreground: var(--color-muted-foreground);
+
+  /* Card components */
+  --card: var(--color-card);
+  --card-foreground: var(--color-card-foreground);
+
+  /* ===== TYPOGRAPHY ===== */
+  --font-sans: system-ui, -apple-system, sans-serif;
+  --font-mono:
+    'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New',
+    monospace;
+
+  /* ===== SHADOWS ===== */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg:
+    0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl:
+    0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/**
+ * Base HTML & Body Styles
+ * Sets up the foundation for the AirDreads app
+ */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/**
+ * Utility Classes for Development
+ * These provide quick debugging and common patterns
+ */
+.debug-grid {
+  background-image:
+    linear-gradient(rgba(255, 166, 101, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 166, 101, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.glass-effect {
+  background: rgba(31, 14, 3, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 166, 101, 0.2);
+}
+
+.glow-primary {
+  box-shadow: 0 0 20px rgba(255, 166, 101, 0.3);
+}
+
+.glow-secondary {
+  box-shadow: 0 0 20px rgba(255, 215, 123, 0.3);
+}
+
+.text-gradient-primary {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

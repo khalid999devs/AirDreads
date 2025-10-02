@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Optional: Add commit message linting here
+# For now, just ensure commit messages are not empty
+if [ -z "$(cat $1 | head -1)" ]; then
+    echo "❌ Commit message is empty!"
+    exit 1
+fi
+
+echo "✅ Commit message validation passed"

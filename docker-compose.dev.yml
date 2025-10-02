@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  flask-dev:
+    build:
+      context: ./services/flask
+      dockerfile: Dockerfile.dev
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./services/flask:/app
+      - /app/.venv # Preserve the virtual environment
+    environment:
+      - FLASK_ENV=development
+      - FLASK_DEBUG=1
+      - PORT=8081
+    command: uv run flask --app app:app run --host 0.0.0.0 --port 8081 --debug --reload
+
+  express-dev:
+    build:
+      context: .
+      dockerfile: services/api/Dockerfile.dev
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./services/api:/app/services/api
+      - /app/node_modules # Preserve root node_modules
+      - /app/services/api/node_modules # Preserve api node_modules
+    environment:
+      - NODE_ENV=development
+      - PORT=8080

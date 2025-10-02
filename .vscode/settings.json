@@ -3,5 +3,17 @@
     {
       "mode": "auto"
     }
-  ]
+  ],
+  "python.defaultInterpreterPath": "./services/flask/.venv/bin/python",
+  "python.analysis.extraPaths": [
+    "./services/flask/.venv/lib/python3.*/site-packages"
+  ],
+  "python.terminal.activateEnvironment": true,
+  "files.associations": {
+    "*.py": "python"
+  },
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": false,
+  "python.linting.flake8Enabled": true,
+  "python.formatting.provider": "black"
 }

@@ -1,0 +1,21 @@
+FROM node:20-alpine
+WORKDIR /app
+
+# Copy root lockfile and workspace config
+COPY pnpm-lock.yaml pnpm-workspace.yaml ./
+COPY package.json ./
+COPY services/api/package.json ./services/api/
+
+# Install dependencies
+RUN corepack enable && pnpm i --frozen-lockfile
+
+# The source code will be mounted as a volume
+# So we don't copy it in the Dockerfile
+
+ENV NODE_ENV=development
+ENV PORT=8080
+EXPOSE 8080
+
+# Change to the api directory and run the dev command with watch mode
+WORKDIR /app/services/api
+CMD ["npx", "tsx", "watch", "src/index.ts"]
