@@ -35,7 +35,7 @@ export default function Home() {
                 appName="AirDreads"
                 className="px-6 py-4 text-lg bg-gray-100 text-gray-900 hover:bg-gray-200 rounded-lg font-medium transition-colors border border-gray-300"
               >
-                📊 Legacy Testing
+                ⚙️ App Configs
               </Button>
             </Link>
           </div>

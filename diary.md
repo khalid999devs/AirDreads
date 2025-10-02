@@ -171,13 +171,42 @@ scripts/
 
 ### Deployment Commands
 
+#### Flask Service Deployment
+
 ```bash
-# Build for production (AMD64 for Cloud Run)
+# Build Flask Docker image for production (AMD64 for Cloud Run)
 docker build --platform linux/amd64 -t asia-southeast1-docker.pkg.dev/airdreads/app-repo/flask:v1 ./services/flask
 docker push asia-southeast1-docker.pkg.dev/airdreads/app-repo/flask:v1
 
-# Deploy to Cloud Run
-gcloud run deploy flask --image=asia-southeast1-docker.pkg.dev/airdreads/app-repo/flask:v1
+# Deploy Flask to Cloud Run
+gcloud run deploy flask --image=asia-southeast1-docker.pkg.dev/airdreads/app-repo/flask:v1 --region=asia-southeast1 --allow-unauthenticated
+```
+
+#### Express API Service Deployment
+
+```bash
+# Build Express Docker image for production (AMD64 for Cloud Run)
+docker build --platform linux/amd64 -t asia-southeast1-docker.pkg.dev/airdreads/app-repo/api:v1 ./services/api
+docker push asia-southeast1-docker.pkg.dev/airdreads/app-repo/api:v1
+
+# Deploy Express API to Cloud Run
+gcloud run deploy api --image=asia-southeast1-docker.pkg.dev/airdreads/app-repo/api:v1 --region=asia-southeast1 --allow-unauthenticated
+```
+
+#### Quick Redeploy Commands
+
+```bash
+# Flask service redeploy
+cd services/flask
+docker build --platform linux/amd64 -t asia-southeast1-docker.pkg.dev/airdreads/app-repo/flask:v1 .
+docker push asia-southeast1-docker.pkg.dev/airdreads/app-repo/flask:v1
+gcloud run deploy flask --image=asia-southeast1-docker.pkg.dev/airdreads/app-repo/flask:v1 --region=asia-southeast1 --allow-unauthenticated
+
+# Express API redeploy
+cd services/api
+docker build --platform linux/amd64 -t asia-southeast1-docker.pkg.dev/airdreads/app-repo/api:v1 .
+docker push asia-southeast1-docker.pkg.dev/airdreads/app-repo/api:v1
+gcloud run deploy api --image=asia-southeast1-docker.pkg.dev/airdreads/app-repo/api:v1 --region=asia-southeast1 --allow-unauthenticated
 ```
 
 ### Vercel Frontend Deployment
