@@ -1,243 +1,257 @@
-# AirDreads Project
+# 🌍 AirDreads - NASA Space Apps Challenge 2025
 
-## Project Structure
+> **Where Every Move Saves a Breath** - Turning invisible air threats visible through gamification
+
+## 🏗️ Project Structure
 
 ```
 airdreads/
 ├── apps/
-│   └── web/           # Next.js web frontend
+│   └── webapp/        # Next.js 15 frontend with App Router
 ├── packages/
 │   ├── db/            # Database package with Prisma
 │   ├── eslint-config/ # Shared ESLint configuration
 │   ├── typescript-config/ # Shared TypeScript configuration
 │   └── ui/            # Shared UI components
-└── services/
-    ├── api/           # Node.js Express API service
-    └── flask/         # Python Flask service
+├── services/
+│   ├── api/           # Node.js Express API service
+│   └── flask/         # Python Flask service with ML capabilities
+└── scripts/           # Development automation scripts
 ```
 
-## Docker Commands (Run from Root Directory)
+## 🚀 Development Workflow (Latest)
 
-### Run All Services
+### One-Command Setup ⚡
 
 ```bash
-cd /Users/khalid999devs/Documents/hackathon/airdreads
+# Clone and setup everything
+git clone https://github.com/khalid999devs/AirDreads.git
+cd AirDreads
+pnpm run setup          # Installs dependencies + checks prerequisites
 
-docker build -f services/api/Dockerfile -t api:dev . && docker run --rm -p 8080:8080 api:dev &
-docker build -t flask:dev ./services/flask && docker run --rm -p 8081:8080 flask:dev &
-
-# Test services
-curl http://localhost:8080/health
-curl http://localhost:8081/health
-
-# Stop services
-kill %1 %2 2>/dev/null || true
+# Start development servers with HOT RELOAD 🔥
+pnpm run dev:servers    # Flask (8081) + Express (8080) with watch mode
+pnpm run dev:webapp     # Next.js (3000) in separate terminal
 ```
 
-### Individual Services
-
-#### API Service
+### Development Commands
 
 ```bash
-docker build -f services/api/Dockerfile -t api:dev .
-docker run --rm -p 8080:8080 api:dev
+pnpm run dev:servers      # Start both APIs with hot reload
+pnpm run dev:servers:stop # Stop all development servers
+pnpm run dev:webapp       # Start Next.js frontend
+pnpm run check-setup      # Verify everything is configured
+pnpm run reset            # Nuclear reset + fresh install
+pnpm run test:hooks       # Test git hooks functionality
 ```
 
-#### Flask Service
+### Service URLs
+
+- **Flask API**: http://localhost:8081 (Python ML service)
+- **Express API**: http://localhost:8080 (Node.js service)
+- **Next.js App**: http://localhost:3000 (Frontend webapp)
+
+## 🔥 Hot Reload Development
+
+### Features
+
+- ✅ **Flask**: Auto-restart on `.py` file changes
+- ✅ **Express**: Auto-restart on `.ts` file changes with `tsx watch`
+- ✅ **Docker Volume Mounting**: No container rebuilds needed
+- ✅ **Next.js**: Standard hot reload for frontend
+
+### Docker Configuration
+
+- `docker-compose.dev.yml` - Development containers with volume mounting
+- `services/*/Dockerfile.dev` - Development-optimized Dockerfiles
+- Python virtual environment preserved in containers
+
+## 🔒 Production-Grade Code Quality
+
+### Git Hooks with Husky + lint-staged
+
+- ✅ **Pre-commit hooks** run automatically on `git commit`
+- ✅ **Prettier formatting** for TypeScript/JavaScript files
+- ✅ **Config file formatting** (JSON, Markdown, YAML)
+- ✅ **Commit message validation** (non-empty commits)
+- ✅ **Zero bad code** reaches the repository
+
+### Lint-staged Configuration
+
+```json
+{
+  "apps/**/*.{js,jsx,ts,tsx}": ["prettier --write"],
+  "packages/**/*.{js,jsx,ts,tsx}": ["prettier --write"],
+  "services/**/*.{js,ts}": ["prettier --write"],
+  "*.{json,md,yml,yaml}": ["prettier --write"]
+}
+```
+
+## 🎨 Frontend Features (Next.js 15)
+
+### Theme System
+
+- ✅ **Dark/Light mode** with Tailwind CSS v4
+- ✅ **Custom CSS variables** for comprehensive theming
+- ✅ **Theme persistence** with localStorage
+- ✅ **Smooth transitions** between themes
+
+### Internationalization
+
+- ✅ **English/Bangla** language support
+- ✅ **Translation system** with context providers
+- ✅ **Language toggle** component
+- ✅ **Locale-aware** content rendering
+
+### Application Routes
+
+- `/` - Landing page with "See AppConfigs" button
+- `/test` - Comprehensive API testing interface
+- `/dashboard` - User dashboard with stats
+- `/challenges` - Gamified air quality challenges
+- `/leaderboard` - Community rankings
+- `/about` - Project information
+
+### API Testing Interface
+
+- ✅ **Next.js API route** testing (`/api/test`)
+- ✅ **Express server** connectivity test (port 8080)
+- ✅ **Flask server** dual endpoint testing (port 8081)
+- ✅ **Real-time status** indicators
+- ✅ **Error handling** with user feedback
+
+## 🐍 Python Environment Setup
+
+### Virtual Environment Management
+
+- ✅ **uv package manager** for fast Python dependency management
+- ✅ **Virtual environment** at `services/flask/.venv`
+- ✅ **VS Code integration** with automatic interpreter detection
+- ✅ **flask-cors** for cross-origin requests
+
+### VS Code Configuration
+
+```json
+{
+  "python.defaultInterpreterPath": "./services/flask/.venv/bin/python",
+  "python.analysis.extraPaths": [
+    "./services/flask/.venv/lib/python3.*/site-packages"
+  ]
+}
+```
+
+## 📁 Script Automation
+
+### Available Scripts
 
 ```bash
-docker build -t flask:dev ./services/flask
-docker run --rm -p 8081:8080 flask:dev
+scripts/
+├── setup.sh              # First-time project setup
+├── dev-servers.sh         # Start development servers
+├── stop-dev-servers.sh    # Stop development servers
+├── reset.sh              # Nuclear workspace reset
+├── check-prerequisites.sh # Verify system requirements
+└── test-git-hooks.sh     # Demonstrate git hook functionality
 ```
 
-## Root Commands
+### Script Features
 
-### Monorepo Management
+- ✅ **Prerequisite checking** (Docker, Node.js, pnpm)
+- ✅ **Automatic installation** of missing tools
+- ✅ **Clean error messages** with actionable guidance
+- ✅ **Cross-platform compatibility** for macOS/Linux
 
-```bash
-pnpm install
-pnpm build
-pnpm --filter api dev
-pnpm --filter flask dev
-```
+## 🌐 Production Deployment
 
-### Service Ports
-
-- API Service: `localhost:8080`
-- Flask Service: `localhost:8081`
-
-## Google Cloud Deployment
-
-### Prerequisites
-
-- Google Cloud CLI installed ✅
-- Docker Desktop running ✅
-
-### 1. Choose Your Project ID
-
-Available projects:
-
-```bash
-gcloud projects list
-```
-
-### 2. Initial Setup (One Time)
-
-Project ID: **airdreads** ✅
-
-**⚠️ BILLING SETUP REQUIRED FIRST:**
-
-1. Go to: https://console.cloud.google.com/billing
-2. Reopen your billing account "My Billing Account"
-3. Link it to the "airdreads" project
-
-```bash
-# Set project and region
-gcloud config set project airdreads
-gcloud config set run/region asia-southeast1
-
-# Link billing account (after reopening)
-gcloud billing projects link airdreads --billing-account=01AD0C-D58F82-DEE4E9
-
-# Enable required services
-gcloud services enable \
-  run.googleapis.com \
-  artifactregistry.googleapis.com \
-  cloudbuild.googleapis.com \
-  secretmanager.googleapis.com \
-  logging.googleapis.com
-
-# Create Docker repository
-gcloud artifacts repositories create app-repo \
-  --repository-format=docker \
-  --location=asia-southeast1
-
-# Configure Docker authentication
-gcloud auth configure-docker asia-southeast1-docker.pkg.dev
-```
-
-### 3. Build and Deploy Flask Service
-
-```bash
-# Build and push Flask image (with AMD64 platform for Cloud Run)
-docker build --platform linux/amd64 -t asia-southeast1-docker.pkg.dev/airdreads/app-repo/flask:v1 ./services/flask
-docker push asia-southeast1-docker.pkg.dev/airdreads/app-repo/flask:v1
-
-# Deploy to Cloud Run
-gcloud run deploy flask \
-  --image=asia-southeast1-docker.pkg.dev/airdreads/app-repo/flask:v1 \
-  --allow-unauthenticated \
-  --port=8080 \
-  --cpu=1 --memory=1Gi \
-  --min-instances=0 --max-instances=3 \
-  --timeout=300
-
-# Test deployment
-curl https://flask-262907936819.asia-southeast1.run.app/health
-```
-
-### 4. Build and Deploy API Service
-
-```bash
-# Build and push API image (with AMD64 platform for Cloud Run)
-docker build --platform linux/amd64 -f services/api/Dockerfile -t asia-southeast1-docker.pkg.dev/airdreads/app-repo/api:v1 .
-docker push asia-southeast1-docker.pkg.dev/airdreads/app-repo/api:v1
-
-# Deploy to Cloud Run
-gcloud run deploy api \
-  --image=asia-southeast1-docker.pkg.dev/airdreads/app-repo/api:v1 \
-  --allow-unauthenticated \
-  --port=8080 \
-  --cpu=1 --memory=512Mi \
-  --min-instances=0 --max-instances=3 \
-  --timeout=120
-
-# Test deployment
-curl https://api-262907936819.asia-southeast1.run.app/health
-```
-
-### 5. Environment Variables & Secrets
-
-```bash
-# Set environment variables
-gcloud run services update flask \
-  --set-env-vars "MODEL_VARIANT=small,LOG_LEVEL=info"
-
-# Create and use secrets
-echo -n "sk-your-api-key" | gcloud secrets create OPENAI_API_KEY --data-file=-
-gcloud run services update flask \
-  --update-secrets "OPENAI_API_KEY=OPENAI_API_KEY:latest"
-```
-
-### 6. Useful Commands
-
-```bash
-# View logs
-gcloud logs tail --project airdreads --service=flask
-gcloud logs tail --project airdreads --service=api
-
-# Keep services warm (optional)
-gcloud run services update flask --min-instances=1
-
-# Cleanup (delete services)
-gcloud run services delete flask --region=asia-southeast1
-gcloud run services delete api --region=asia-southeast1
-```
-
-## 🌐 **Live Services**
-
-### Production URLs:
+### Google Cloud Run (Live)
 
 - **Flask Service**: https://flask-262907936819.asia-southeast1.run.app/health
 - **API Service**: https://api-262907936819.asia-southeast1.run.app/health
+- **Status**: ✅ All services operational
 
-### Status: ✅ **All services operational**
-
-## 📝 **Quick Reference**
-
-### Most Common Commands:
+### Deployment Commands
 
 ```bash
-# Local development
-cd /Users/khalid999devs/Documents/hackathon/airdreads
-docker build -f services/api/Dockerfile -t api:dev . && docker run --rm -p 8080:8080 api:dev &
-docker build -t flask:dev ./services/flask && docker run --rm -p 8081:8080 flask:dev &
-
-# Frontend development
-pnpm --filter web dev  # Runs Next.js on http://localhost:3000
-
-# Deploy updates to production
+# Build for production (AMD64 for Cloud Run)
 docker build --platform linux/amd64 -t asia-southeast1-docker.pkg.dev/airdreads/app-repo/flask:v1 ./services/flask
 docker push asia-southeast1-docker.pkg.dev/airdreads/app-repo/flask:v1
+
+# Deploy to Cloud Run
 gcloud run deploy flask --image=asia-southeast1-docker.pkg.dev/airdreads/app-repo/flask:v1
 ```
 
-## 🌐 **Frontend Deployment (Vercel)**
+### Vercel Frontend Deployment
 
-### Prerequisites:
+- ✅ **Automatic deployment** from GitHub pushes
+- ✅ **Monorepo support** with shared packages
+- ✅ **Root directory**: `apps/webapp`
+- ✅ **Environment variables** for API endpoints
 
-- GitHub/GitLab repository
-- Vercel account
+## 🔧 Technical Stack
 
-### Automatic Deployment:
+### Frontend
 
-1. **Push code to GitHub**
-2. **Import repository in Vercel**
-3. **Set Root Directory**: `apps/web`
-4. **Vercel auto-detects monorepo and builds with shared packages**
+- **Next.js 15** - React framework with App Router
+- **Tailwind CSS v4** - Utility-first styling with custom theme
+- **TypeScript** - Type-safe development
+- **React 19** - Latest React features
 
-### Configuration:
+### Backend Services
 
-- Uses `vercel.json` in root directory ✅
-- Shared packages (`@repo/ui`, `@repo/db`) are automatically bundled
-- No separate hosting needed for packages
+- **Flask** - Python web framework with flask-cors
+- **Express.js** - Node.js web framework
+- **Docker** - Containerization for development and production
+- **pnpm** - Fast package manager for monorepo
 
-### Local Frontend Development:
+### Development Tools
+
+- **Husky** - Git hooks management
+- **lint-staged** - Run linters on staged files
+- **Prettier** - Code formatting
+- **ESLint** - Code quality checks
+- **Turbo** - Monorepo build system
+
+## 🎯 Development Best Practices
+
+### Code Quality
+
+- ✅ **Zero warnings** policy with ESLint
+- ✅ **Consistent formatting** with Prettier
+- ✅ **Type safety** with TypeScript
+- ✅ **Pre-commit validation** prevents bad commits
+
+### Development Experience
+
+- ✅ **Hot reload** for all services
+- ✅ **One-command setup** for new developers
+- ✅ **Comprehensive error handling** with clear messages
+- ✅ **Docker isolation** prevents environment conflicts
+
+### Project Organization
+
+- ✅ **Monorepo structure** with shared packages
+- ✅ **Consistent naming** conventions
+- ✅ **Modular architecture** for scalability
+- ✅ **Documentation-driven** development
+
+## 🚀 Quick Start for New Developers
 
 ```bash
-# Run Next.js frontend locally
-pnpm --filter web dev
+# 1. Clone repository
+git clone https://github.com/khalid999devs/AirDreads.git
+cd AirDreads
+
+# 2. One-command setup
+pnpm run setup
+
+# 3. Start development
+pnpm run dev:servers    # APIs with hot reload
+pnpm run dev:webapp     # Frontend (separate terminal)
+
+# 4. Access applications
 # Frontend: http://localhost:3000
-# API: http://localhost:8080 (if running)
-# Flask: http://localhost:8081 (if running)
+# Express API: http://localhost:8080
+# Flask API: http://localhost:8081
 ```
+
+**That's it!** 🎉 Full development environment ready in under 2 minutes.
