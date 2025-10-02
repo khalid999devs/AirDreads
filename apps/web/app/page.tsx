@@ -21,6 +21,11 @@ const ThemeImage = (props: Props) => {
 export default function Home() {
   return (
     <div className={styles.page}>
+      {/* Tailwind CSS Test */}
+      <div className="bg-blue-500 text-white p-4 m-4 rounded-lg">
+        <h1 className="text-2xl font-bold">🚀 AirDreads - Tailwind CSS is working!</h1>
+        <p className="text-sm opacity-75">NASA Space Apps Challenge 2025</p>
+      </div>
       <main className={styles.main}>
         <ThemeImage
           className={styles.logo}
