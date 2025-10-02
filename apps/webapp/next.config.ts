@@ -6,8 +6,8 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
 
   // Handle monorepo setup
-  transpilePackages: ["@repo/ui"],
-  outputFileTracingRoot: "../../",
+  // transpilePackages: ["@repo/ui"], // No longer needed - using local components
+  // outputFileTracingRoot: "../../", // No longer needed - not using workspace packages
 
   // Environment variables
   env: {

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Button } from "@repo/ui/button";
+import { Button } from "../components/ui/button";
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
