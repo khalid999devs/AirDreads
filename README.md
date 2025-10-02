@@ -1,135 +1,182 @@
-# Turborepo starter
+# 🌍 AirDreads - Where Every Move Saves a Breath
 
-This Turborepo starter is maintained by the Turborepo core team.
+[![NASA Space Apps Challenge 2025](https://img.shields.io/badge/NASA%20Space%20Apps-2025-blue.svg)](https://www.spaceappschallenge.org/)
+[![Team NebXplorers](https://img.shields.io/badge/Team-NebXplorers-purple.svg)](#team)
+[![Live Demo](https://img.shields.io/badge/Demo-Live-green.svg)](#live-demo)
 
-## Using this example
+> **Turning invisible air threats visible through gamification** - A revolutionary platform that transforms complex NASA air quality data into an engaging, life-saving gaming experience.
 
-Run the following command:
+## 🚨 The Problem
 
-```sh
-npx create-turbo@latest
+Every breath we take carries risk. **7 million deaths worldwide** are caused by air pollution annually according to WHO. The invisible enemies - ozone, fine particles, toxic gases - silently impact our health while most people remain unaware of the danger lurking in the air around them.
+
+**The Information Crisis**: NASA satellites track pollutants, fires, and aerosols globally every hour, but this powerful data remains locked in dashboards and reports that most people never see.
+
+## 🎮 Our Solution: AirDreads
+
+**AirDreads** bridges the gap between NASA's powerful environmental data and the people who need it most - through an innovative gaming interface that makes air quality monitoring engaging, educational, and actionable.
+
+### ✨ Key Features
+
+🎯 **Gamified Air Quality Monitoring**
+- Real-time air quality dashboard with XP rewards
+- Mission-based learning about air pollutants
+- AR mode to visualize invisible threats
+- Progressive challenges that teach safety habits
+
+🤖 **AI-Powered Health Coach (AirBuddy)**
+- Personalized health recommendations
+- Real-time alerts for dangerous conditions
+- Habit-building guidance for safer living
+
+🌐 **Professional Analytics Mode**
+- NASA TEMPO and MERRA-2 data integration
+- Advanced visualizations for researchers
+- Stakeholder dashboards for firefighters, health workers, city planners
+
+🌍 **3D Earth Exploration**
+- Fly anywhere, explore any date
+- Visualize global air quality patterns
+- Historical data analysis and forecasting
+
+## 🏗️ Technical Architecture
+
+### Frontend
+- **Next.js 15** - Modern React framework
+- **Vercel Deployment** - Global CDN distribution
+- **Shared UI Components** - Consistent design system
+- **TypeScript** - Type-safe development
+
+### Backend Services
+- **Express API** - RESTful services (Google Cloud Run)
+- **Python Flask** - ML/AI processing (Google Cloud Run)
+- **Prisma ORM** - Database management
+- **NASA Data Integration** - TEMPO, MERRA-2 APIs
+
+### Infrastructure
+- **Google Cloud Run** - Scalable containerized services
+- **Docker** - Containerization for consistent deployments
+- **Monorepo** - Organized codebase with shared packages
+
+## 🚀 Live Demo
+
+### Production Services
+- **Frontend**: [Coming Soon - Vercel Deployment]
+- **API Service**: https://api-262907936819.asia-southeast1.run.app/health
+- **ML Service**: https://flask-262907936819.asia-southeast1.run.app/health
+
+### Prerequisites
+- Node.js 18+
+- pnpm (recommended)
+- Docker Desktop
+- Google Cloud CLI (for deployment)
+
+### Local Development
+
+```bash
+# Clone and install
+git clone https://github.com/khalid999devs/AirDreads.git
+cd AirDreads
+pnpm install
+
+# Run frontend
+pnpm --filter web dev
+# Visit: http://localhost:3000
+
+# Run backend services
+docker build -f services/api/Dockerfile -t api:dev . && docker run --rm -p 8080:8080 api:dev &
+docker build -t flask:dev ./services/flask && docker run --rm -p 8081:8080 flask:dev &
+
+# Test services
+curl http://localhost:8080/health  # API
+curl http://localhost:8081/health  # Flask ML service
 ```
 
-## What's inside?
-
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
+## 📊 Project Structure
 
 ```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build
-yarn dlx turbo build
-pnpm exec turbo build
+airdreads/
+├── apps/
+│   └── web/           # Next.js frontend (Vercel)
+├── packages/
+│   ├── db/            # Prisma database schema
+│   ├── eslint-config/ # Shared linting rules
+│   ├── typescript-config/ # Shared TS config
+│   └── ui/            # Shared React components
+└── services/
+    ├── api/           # Express API (Google Cloud Run)
+    └── flask/         # Python ML service (Google Cloud Run)
 ```
 
-You can build a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
+## 🧠 AI & Machine Learning
 
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build --filter=docs
+Our fine-tuned expert model powers AirDreads intelligence:
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build --filter=docs
-yarn exec turbo build --filter=docs
-pnpm exec turbo build --filter=docs
-```
+- **NASA Data Processing**: TEMPO and MERRA-2 satellite data integration
+- **Air Quality Calculation**: Real-time AQI computation and validation
+- **Predictive Modeling**: Future air quality forecasting
+- **Personalized Recommendations**: ML-driven health guidance
+- **Ground Truth Validation**: Cross-reference with trusted monitoring stations
 
-### Develop
+## 🌍 Impact & UN SDGs
 
-To develop all apps and packages, run the following command:
+AirDreads directly contributes to:
 
-```
-cd my-turborepo
+- **SDG 3**: Good Health and Well-being - Protecting respiratory health through awareness
+- **SDG 11**: Sustainable Cities and Communities - Smart urban air quality management  
+- **SDG 13**: Climate Action - Environmental monitoring and education
 
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev
+## 👥 Team NebXplorers
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev
-yarn exec turbo dev
-pnpm exec turbo dev
-```
+**🚀 Khalid** - Team Leader & Full-Stack Engineer  
+*Leading the mission to turn complex NASA data into life-saving solutions*
 
-You can develop a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
+**⚡ Fuad** - Backend Engineering & 3D Experience  
+*Powering the backend systems and immersive 3D visualizations*
 
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev --filter=web
+**🎨 Ajoy** - UI/UX Designer & Prototype Development  
+*Crafting intuitive interfaces that transform data into action*
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev --filter=web
-yarn exec turbo dev --filter=web
-pnpm exec turbo dev --filter=web
-```
+**🤖 Zaina** - Machine Learning & Data Science  
+*Fusing NASA forecasts with intelligent algorithms*
 
-### Remote Caching
+**🎬 Rahul** - Visual Design & Media Production  
+*Bringing the vision to life through compelling visuals and sound*
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
+## 🚀 Deployment
 
-Turborepo can use a technique known as [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+### Automated Deployment Pipeline
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
+- **Frontend**: Vercel (Auto-deploy from main branch)
+- **Backend Services**: Google Cloud Run (Containerized deployment)
+- **Database**: Prisma with PostgreSQL
+- **Monitoring**: Cloud logging and health checks
 
-```
-cd my-turborepo
+### Production URLs
+- **API Service**: https://api-262907936819.asia-southeast1.run.app
+- **ML Service**: https://flask-262907936819.asia-southeast1.run.app
+- **Frontend**: [Deploy to Vercel to get URL]
 
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo login
+## 🔮 Future Roadmap
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo login
-yarn exec turbo login
-pnpm exec turbo login
-```
+- **🏃‍♂️ Wearable Integration**: Track personal air exposure in real-time
+- **🏠 Smart Home**: Connect with IoT devices for indoor air quality
+- **🏆 Global Leaderboards**: Cities compete for cleaner air
+- **📱 Mobile Apps**: Native iOS/Android experiences
+- **🔬 Research Portal**: Direct scientist-player collaboration
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+## 📄 License
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+This project is part of the NASA Space Apps Challenge 2025.
 
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo link
+## 🙏 Acknowledgments
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo link
-yarn exec turbo link
-pnpm exec turbo link
-```
+- **NASA** for providing invaluable satellite data through TEMPO and MERRA-2
+- **Space Apps Challenge** for inspiring global innovation
+- **Open Source Community** for the amazing tools and libraries
 
-## Useful Links
+---
 
-Learn more about the power of Turborepo:
+### 🌟 "Where Every Move Saves a Breath" 
 
-- [Tasks](https://turborepo.com/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.com/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.com/docs/reference/configuration)
-- [CLI Usage](https://turborepo.com/docs/reference/command-line-reference)
+*Making invisible air threats visible through the power of gamification and NASA data.*
