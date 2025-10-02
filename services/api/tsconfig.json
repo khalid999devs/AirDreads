@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    // I/O
+    "rootDir": "src",
+    "outDir": "dist",
+
+    // Runtime (ESM on Node)
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "target": "ES2022",
+    "types": ["node"],
+    "lib": ["ES2022"],
+
+    // Outputs (tweak as you like)
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // Strictness
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "skipLibCheck": true,
+
+    // Interop & JSON
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+
+    // Build behavior
+    "isolatedModules": true
+  },
+  "include": ["src/**/*"]
+}

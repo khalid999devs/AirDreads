@@ -1,9 +1,9 @@
 {
-  "name": "airdreads",
-  "private": true,
+  "name": "@airdreads/flask",
+  "private": "true",
   "scripts": {
     "build": "turbo run build",
-    "dev": "turbo run dev",
+    "dev": "uv run python app.py",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types"
