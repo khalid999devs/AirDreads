@@ -10,10 +10,10 @@ export default function Home() {
         <div className="flex flex-col items-center justify-center min-h-[60vh] text-center space-y-8">
           {/* Title */}
           <div className="space-y-4">
-            <h1 className="text-6xl font-bold">
+            <h2 className="text-6xl font-bold">
               <span className="text-primary">Air</span>
               <span className="text-secondary">Dreads</span>
-            </h1>
+            </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Hello World! Start your air quality journey from here.
             </p>

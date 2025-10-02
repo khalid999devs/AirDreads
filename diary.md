@@ -29,7 +29,7 @@ git clone https://github.com/khalid999devs/AirDreads.git
 cd AirDreads
 pnpm run setup          # Installs dependencies + checks prerequisites
 
-# Start development servers with HOT RELOAD 🔥
+# Start development servers with HOT RELOAD
 pnpm run dev:servers    # Flask (8081) + Express (8080) with watch mode
 pnpm run dev:webapp     # Next.js (3000) in separate terminal
 ```
