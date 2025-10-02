@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
 
   // Handle monorepo setup
   transpilePackages: ["@repo/ui"],
+  outputFileTracingRoot: "../../",
 
   // Environment variables
   env: {
