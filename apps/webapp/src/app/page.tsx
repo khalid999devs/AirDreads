@@ -19,14 +19,23 @@ export default function Home() {
             </p>
           </div>
 
-          {/* See AppConfigs Button */}
-          <div className="mt-8">
+          {/* API Configuration Buttons */}
+          <div className="mt-8 flex gap-4">
+            <Link href="/test-modern">
+              <Button
+                appName="AirDreads"
+                className="px-8 py-4 text-lg bg-blue-600 text-white hover:bg-blue-700 rounded-lg font-semibold transition-colors"
+              >
+                🧪 Modern API Testing
+              </Button>
+            </Link>
+
             <Link href="/test">
               <Button
                 appName="AirDreads"
-                className="px-8 py-4 text-lg bg-primary text-primary-foreground hover:bg-primary/90 rounded-lg font-semibold transition-colors"
+                className="px-6 py-4 text-lg bg-gray-100 text-gray-900 hover:bg-gray-200 rounded-lg font-medium transition-colors border border-gray-300"
               >
-                See AppConfigs
+                📊 Legacy Testing
               </Button>
             </Link>
           </div>

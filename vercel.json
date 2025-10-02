@@ -1,7 +1,12 @@
 {
-  "buildCommand": "pnpm --filter web build",
-  "outputDirectory": "apps/web/.next",
+  "buildCommand": "pnpm --filter webapp build",
+  "outputDirectory": "apps/webapp/.next",
   "installCommand": "pnpm install",
   "framework": "nextjs",
-  "rootDirectory": "apps/web"
+  "rootDirectory": "apps/webapp",
+  "env": {
+    "NEXT_PUBLIC_EXPRESS_API_URL": "https://api-262907936819.asia-southeast1.run.app",
+    "NEXT_PUBLIC_FLASK_API_URL": "https://flask-262907936819.asia-southeast1.run.app",
+    "NEXT_PUBLIC_NEXTJS_API_URL": "https://your-vercel-domain.com/api"
+  }
 }
