@@ -1,12 +1,21 @@
 {
-  "buildCommand": "pnpm --filter webapp build",
-  "outputDirectory": "apps/webapp/.next",
-  "installCommand": "pnpm install",
-  "framework": "nextjs",
-  "rootDirectory": "apps/webapp",
+  "version": 2,
+  "builds": [
+    {
+      "src": "apps/webapp/next.config.ts",
+      "use": "@vercel/next",
+      "config": {
+        "buildCommand": "cd ../.. && pnpm --filter webapp build"
+      }
+    }
+  ],
+  "functions": {
+    "apps/webapp/src/app/api/**/*.ts": {
+      "runtime": "nodejs18.x"
+    }
+  },
   "env": {
     "NEXT_PUBLIC_EXPRESS_API_URL": "https://api-262907936819.asia-southeast1.run.app",
-    "NEXT_PUBLIC_FLASK_API_URL": "https://flask-262907936819.asia-southeast1.run.app",
-    "NEXT_PUBLIC_NEXTJS_API_URL": "https://your-vercel-domain.com/api"
+    "NEXT_PUBLIC_FLASK_API_URL": "https://flask-262907936819.asia-southeast1.run.app"
   }
 }
