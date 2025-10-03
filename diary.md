@@ -1,8 +1,8 @@
-# 🌍 AirDreads - NASA Space Apps Challenge 2025
+# AirDreads - NASA Space Apps Challenge 2025
 
 > **Where Every Move Saves a Breath** - Turning invisible air threats visible through gamification
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 airdreads/
@@ -19,7 +19,7 @@ airdreads/
 └── scripts/           # Development automation scripts
 ```
 
-## 🚀 Development Workflow (Latest)
+## Development Workflow (Latest)
 
 ### One-Command Setup ⚡
 
