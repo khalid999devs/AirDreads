@@ -1,15 +1,4 @@
-# AirDreads - Where Every Move Saves a Breath
-
-[![NASA Space Apps Challenge 2025](https://img.shields.io/badge/NASA%20Space%20Apps-2025-blue.svg)](https://www.spaceappschallenge.org/)
-[![Team NebXplorers](https://img.shields.io/badge/Team-NebXplorers-purple.svg)](#team-nebxplorers)
-[![Live Demo](https://img.shields.io/badge/Demo-Live-green.svg)](#live-demo)
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](#license)
-
-**By Team NebXplorers**
-
-> **Transforming invisible air threats into visible, interactive, and actionable experiences** - A revolutionary platform that combines NASA air quality data, AI, augmented reality, and gamification to empower users to understand, monitor, and improve the air they breathe.
-
-## Table of Contentsds - Where Every Move Saves a ## App Features
+# AirDreads - Where Every Move Saves a Bre## App Features
 
 ### Gamified Mode
 
@@ -26,7 +15,7 @@
 - **Research Mode (Quest Box)**: Contribute to scientific research while completing missions
 - **Targeted Dashboards**: Custom views for emergency responders and city planners, including an SOS button for emergency alerts
 
-### Data & Forecastingace Apps Challenge 2025](https://img.shields.io/badge/NASA%20Space%20Apps-2025-blue.svg)](https://www.spaceappschallenge.org/)
+### Data & Forecasting Apps Challenge 2025](https://img.shields.io/badge/NASA%20Space%20Apps-2025-blue.svg)](https://www.spaceappschallenge.org/)
 
 [![Team NebXplorers](https://img.shields.io/badge/Team-NebXplorers-purple.svg)](#team-nebxplorers)
 [![Live Demo](https://img.shields.io/badge/Demo-Live-green.svg)](#live-demo)
@@ -36,7 +25,7 @@
 
 > **Transforming invisible air threats into visible, interactive, and actionable experiences** - A revolutionary platform that combines NASA air quality data, AI, augmented reality, and gamification to empower users to understand, monitor, and improve the air they breathe.
 
-## � Table of Contents
+## Table of Contents
 
 - [Project at a Glance](#project-at-a-glance)
 - [The Problem](#the-problem)
