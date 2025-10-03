@@ -13,7 +13,7 @@
 
 View our complete UI/UX design and interactive prototypes on Figma:
 
-**[AirDreads - NASA Space App Design](https://www.figma.com/design/AEv1VdsBgL3JXpgLdC8XVC/Nasa-Space-App?node-id=0-1&t=FJDDa72sHOrNK6Vn-1)**
+https://www.figma.com/design/AEv1VdsBgL3JXpgLdC8XVC/Nasa-Space-App?node-id=0-1&t=FJDDa72sHOrNK6Vn-1
 
 Our Figma design includes:
 
