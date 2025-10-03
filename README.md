@@ -33,6 +33,19 @@
 - **Predictive Modeling**: Forecasts near-term and long-term air quality
 - **Personalized Recommendations**: Adjusted dynamically based on location and user actions
 
+## App UI/UX (Figma Design)
+
+View our complete UI/UX design and interactive prototypes on Figma:
+
+**[AirDreads - NASA Space App Design](https://www.figma.com/design/AEv1VdsBgL3JXpgLdC8XVC/Nasa-Space-App?node-id=0-1&t=FJDDa72sHOrNK6Vn-1)**
+
+Our Figma design includes:
+
+- **Complete UI Mockups**: All application screens and user flows
+- **Interactive Prototypes**: Clickable demos of key user journeys
+- **Responsive Layouts**: Mobile, tablet, and desktop designs
+- **AR/Gamification Elements**: Visual concepts for augmented reality features
+
 ## Table of Contents
 
 - [Project at a Glance](#project-at-a-glance)

@@ -21,7 +21,7 @@ airdreads/
 
 ## Development Workflow (Latest)
 
-### One-Command Setup ⚡
+### One-Command Setup
 
 ```bash
 # Clone and setup everything
@@ -51,14 +51,14 @@ pnpm run test:hooks       # Test git hooks functionality
 - **Express API**: http://localhost:8080 (Node.js service)
 - **Next.js App**: http://localhost:3000 (Frontend webapp)
 
-## 🔥 Hot Reload Development
+## Hot Reload Development
 
 ### Features
 
-- ✅ **Flask**: Auto-restart on `.py` file changes
-- ✅ **Express**: Auto-restart on `.ts` file changes with `tsx watch`
-- ✅ **Docker Volume Mounting**: No container rebuilds needed
-- ✅ **Next.js**: Standard hot reload for frontend
+- **Flask**: Auto-restart on `.py` file changes
+- **Express**: Auto-restart on `.ts` file changes with `tsx watch`
+- **Docker Volume Mounting**: No container rebuilds needed
+- **Next.js**: Standard hot reload for frontend
 
 ### Docker Configuration
 
@@ -66,15 +66,15 @@ pnpm run test:hooks       # Test git hooks functionality
 - `services/*/Dockerfile.dev` - Development-optimized Dockerfiles
 - Python virtual environment preserved in containers
 
-## 🔒 Production-Grade Code Quality
+## Production-Grade Code Quality
 
 ### Git Hooks with Husky + lint-staged
 
-- ✅ **Pre-commit hooks** run automatically on `git commit`
-- ✅ **Prettier formatting** for TypeScript/JavaScript files
-- ✅ **Config file formatting** (JSON, Markdown, YAML)
-- ✅ **Commit message validation** (non-empty commits)
-- ✅ **Zero bad code** reaches the repository
+- **Pre-commit hooks** run automatically on `git commit`
+- **Prettier formatting** for TypeScript/JavaScript files
+- **Config file formatting** (JSON, Markdown, YAML)
+- **Commit message validation** (non-empty commits)
+- **Zero bad code** reaches the repository
 
 ### Lint-staged Configuration
 
@@ -87,21 +87,21 @@ pnpm run test:hooks       # Test git hooks functionality
 }
 ```
 
-## 🎨 Frontend Features (Next.js 15)
+## Frontend Features (Next.js 15)
 
 ### Theme System
 
-- ✅ **Dark/Light mode** with Tailwind CSS v4
-- ✅ **Custom CSS variables** for comprehensive theming
-- ✅ **Theme persistence** with localStorage
-- ✅ **Smooth transitions** between themes
+- **Dark/Light mode** with Tailwind CSS v4
+- **Custom CSS variables** for comprehensive theming
+- **Theme persistence** with localStorage
+- **Smooth transitions** between themes
 
 ### Internationalization
 
-- ✅ **English/Bangla** language support
-- ✅ **Translation system** with context providers
-- ✅ **Language toggle** component
-- ✅ **Locale-aware** content rendering
+- **English/Bangla** language support
+- **Translation system** with context providers
+- **Language toggle** component
+- **Locale-aware** content rendering
 
 ### Application Routes
 
@@ -114,20 +114,20 @@ pnpm run test:hooks       # Test git hooks functionality
 
 ### API Testing Interface
 
-- ✅ **Next.js API route** testing (`/api/test`)
-- ✅ **Express server** connectivity test (port 8080)
-- ✅ **Flask server** dual endpoint testing (port 8081)
-- ✅ **Real-time status** indicators
-- ✅ **Error handling** with user feedback
+- **Next.js API route** testing (`/api/test`)
+- **Express server** connectivity test (port 8080)
+- **Flask server** dual endpoint testing (port 8081)
+- **Real-time status** indicators
+- **Error handling** with user feedback
 
-## 🐍 Python Environment Setup
+## Python Environment Setup
 
 ### Virtual Environment Management
 
-- ✅ **uv package manager** for fast Python dependency management
-- ✅ **Virtual environment** at `services/flask/.venv`
-- ✅ **VS Code integration** with automatic interpreter detection
-- ✅ **flask-cors** for cross-origin requests
+- **uv package manager** for fast Python dependency management
+- **Virtual environment** at `services/flask/.venv`
+- **VS Code integration** with automatic interpreter detection
+- **flask-cors** for cross-origin requests
 
 ### VS Code Configuration
 
@@ -140,7 +140,7 @@ pnpm run test:hooks       # Test git hooks functionality
 }
 ```
 
-## 📁 Script Automation
+## Script Automation
 
 ### Available Scripts
 
@@ -156,18 +156,18 @@ scripts/
 
 ### Script Features
 
-- ✅ **Prerequisite checking** (Docker, Node.js, pnpm)
-- ✅ **Automatic installation** of missing tools
-- ✅ **Clean error messages** with actionable guidance
-- ✅ **Cross-platform compatibility** for macOS/Linux
+- **Prerequisite checking** (Docker, Node.js, pnpm)
+- **Automatic installation** of missing tools
+- **Clean error messages** with actionable guidance
+- **Cross-platform compatibility** for macOS/Linux
 
-## 🌐 Production Deployment
+## Production Deployment
 
 ### Google Cloud Run (Live)
 
 - **Flask Service**: https://flask-262907936819.asia-southeast1.run.app/health
 - **API Service**: https://api-262907936819.asia-southeast1.run.app/health
-- **Status**: ✅ All services operational
+- **Status**: All services operational
 
 ### Deployment Commands
 
@@ -211,12 +211,12 @@ gcloud run deploy api --image=asia-southeast1-docker.pkg.dev/airdreads/app-repo/
 
 ### Vercel Frontend Deployment
 
-- ✅ **Automatic deployment** from GitHub pushes
-- ✅ **Monorepo support** with shared packages
-- ✅ **Root directory**: `apps/webapp`
-- ✅ **Environment variables** for API endpoints
+- **Automatic deployment** from GitHub pushes
+- **Monorepo support** with shared packages
+- **Root directory**: `apps/webapp`
+- **Environment variables** for API endpoints
 
-## 🔧 Technical Stack
+## Technical Stack
 
 ### Frontend
 
@@ -240,30 +240,30 @@ gcloud run deploy api --image=asia-southeast1-docker.pkg.dev/airdreads/app-repo/
 - **ESLint** - Code quality checks
 - **Turbo** - Monorepo build system
 
-## 🎯 Development Best Practices
+## Development Best Practices
 
 ### Code Quality
 
-- ✅ **Zero warnings** policy with ESLint
-- ✅ **Consistent formatting** with Prettier
-- ✅ **Type safety** with TypeScript
-- ✅ **Pre-commit validation** prevents bad commits
+- **Zero warnings** policy with ESLint
+- **Consistent formatting** with Prettier
+- **Type safety** with TypeScript
+- **Pre-commit validation** prevents bad commits
 
 ### Development Experience
 
-- ✅ **Hot reload** for all services
-- ✅ **One-command setup** for new developers
-- ✅ **Comprehensive error handling** with clear messages
-- ✅ **Docker isolation** prevents environment conflicts
+- **Hot reload** for all services
+- **One-command setup** for new developers
+- **Comprehensive error handling** with clear messages
+- **Docker isolation** prevents environment conflicts
 
 ### Project Organization
 
-- ✅ **Monorepo structure** with shared packages
-- ✅ **Consistent naming** conventions
-- ✅ **Modular architecture** for scalability
-- ✅ **Documentation-driven** development
+- **Monorepo structure** with shared packages
+- **Consistent naming** conventions
+- **Modular architecture** for scalability
+- **Documentation-driven** development
 
-## 🚀 Quick Start for New Developers
+## Quick Start for New Developers
 
 ```bash
 # 1. Clone repository
@@ -283,4 +283,4 @@ pnpm run dev:webapp     # Frontend (separate terminal)
 # Flask API: http://localhost:8081
 ```
 
-**That's it!** 🎉 Full development environment ready in under 2 minutes.
+**That's it!** Full development environment ready in under 2 minutes.
