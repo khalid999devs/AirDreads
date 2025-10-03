@@ -1,4 +1,15 @@
-# AirDreads - Where Every Move Saves a Bre## App Features
+# AirDreads - Where Every Move Saves a Breath
+
+[![NASA Space Apps Challenge 2025](https://img.shields.io/badge/NASA%20Space%20Apps-2025-blue.svg)](https://www.spaceappschallenge.org/)
+[![Team NebXplorers](https://img.shields.io/badge/Team-NebXplorers-purple.svg)](#team-nebxplorers)
+[![Live Demo](https://img.shields.io/badge/Demo-Live-green.svg)](#live-demo)
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](#license)
+
+**By Team NebXplorers**
+
+> **Transforming invisible air threats into visible, interactive, and actionable experiences** - A revolutionary platform that combines NASA air quality data, AI, augmented reality, and gamification to empower users to understand, monitor, and improve the air they breathe.
+
+## App Features
 
 ### Gamified Mode
 
@@ -15,15 +26,12 @@
 - **Research Mode (Quest Box)**: Contribute to scientific research while completing missions
 - **Targeted Dashboards**: Custom views for emergency responders and city planners, including an SOS button for emergency alerts
 
-### Data & Forecasting Apps Challenge 2025](https://img.shields.io/badge/NASA%20Space%20Apps-2025-blue.svg)](https://www.spaceappschallenge.org/)
+### Data & Forecasting
 
-[![Team NebXplorers](https://img.shields.io/badge/Team-NebXplorers-purple.svg)](#team-nebxplorers)
-[![Live Demo](https://img.shields.io/badge/Demo-Live-green.svg)](#live-demo)
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](#license)
-
-**By Team NebXplorers**
-
-> **Transforming invisible air threats into visible, interactive, and actionable experiences** - A revolutionary platform that combines NASA air quality data, AI, augmented reality, and gamification to empower users to understand, monitor, and improve the air they breathe.
+- **Algorithm & Expert Model**: Fine-tuned AI integrates NASA TEMPO and MERRA-2 data
+- **Air Quality Calculation**: Computes AQI using satellite and ground data
+- **Predictive Modeling**: Forecasts near-term and long-term air quality
+- **Personalized Recommendations**: Adjusted dynamically based on location and user actions
 
 ## Table of Contents
 
@@ -55,25 +63,6 @@ While NASA satellites (e.g., **TEMPO, MERRA-2**) monitor pollutants, aerosols, a
 ## Our Solution
 
 AirDreads bridges the gap between NASA's environmental data and the people who need it most. It transforms complex datasets into interactive dashboards, gamified missions, and AR experiences, making air quality monitoring **educational, actionable, and fun**.
-
-## 🚀 App Features
-
-### 🎯 Gamified Mode
-
-- **Live Skymap**: Visualizes your city's air quality with real NASA forecasts. Swipe to find the cleanest hours
-- **Missions & Hotspots**: Tap hotspots to complete missions; guides like Vent Wizard and Mask Master suggest actions to protect health
-- **AR Mode**: Invisible pollutants appear in your camera view; defeat them with proper actions
-- **Rewards & XP**: Earn XP, clear zones, and track knowledge growth
-- **Profile & Progress**: Track health, knowledge, and leaderboard rankings
-
-### � Professional Mode
-
-- **Advanced Dashboard**: Data-rich visuals and metrics for research and planning
-- **3D Earth View**: Explore global air quality trends, past and present
-- **Research Mode (Quest Box)**: Contribute to scientific research while completing missions
-- **Targeted Dashboards**: Custom views for emergency responders and city planners, including an SOS button for emergency alerts
-
-### 📊 Data & Forecasting
 
 - **Algorithm & Expert Model**: Fine-tuned AI integrates NASA TEMPO and MERRA-2 data
 - **Air Quality Calculation**: Computes AQI using satellite and ground data
