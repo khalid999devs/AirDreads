@@ -9,6 +9,10 @@
 
 > **Transforming invisible air threats into visible, interactive, and actionable experiences** - A revolutionary platform that combines NASA air quality data, AI, augmented reality, and gamification to empower users to understand, monitor, and improve the air they breathe.
 
+## Project Demonstration (Idea and Functionality)
+
+https://youtu.be/5KvWFadZNBM?si=AxOSUc3lsdmYmL54
+
 ## App UI/UX (Figma Design)
 
 View our complete UI/UX design and interactive prototypes on Figma:
